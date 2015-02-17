@@ -105,6 +105,32 @@ $.fn.dateDropper = function( options ) {
 		// SWITCH LANGUAGES //
 		
 		switch(settings.lang) {
+			//slovenian
+			case 'si':
+			    var monthNames = [
+			        "januar",
+			        "februar",
+			        "marec",
+			        "april",
+			        "maj",
+			        "junij",
+			        "julij",
+			        "avgust",
+			        "september",
+			        "oktober",
+			        "november",
+			        "december"
+			    ];
+			    var dayNames = [
+			        'nedelja',
+			        'ponedeljek',
+			        'torek',
+			        'sreda',
+			        'četrtek',
+			        'petek',
+			        'sobota'
+			    ];
+				break;
 			//italian
 			case 'it': 
 				var monthNames = [
