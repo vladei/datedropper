@@ -157,6 +157,32 @@ $.fn.dateDropper = function( options ) {
 					'Sabato'
 				]; 
 				break;
+			//hungarian	
+			case 'hu':
+				var monthNames = [
+					"január",
+					"február",
+					"március",
+					"április",
+					"május",
+					"június",
+					"július",
+					"augusztus",
+					"szeptember",
+					"október",
+					"november",
+					"december"
+				];
+				var dayNames = [
+					'vasárnap',
+					'hétfő',
+					'kedd',
+					'szerda',
+					'csütörtök',
+					'péntek',
+					'szombat'
+				];
+				break;
 			//espanol
 			case 'es': 
 				var monthNames = [
