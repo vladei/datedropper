@@ -209,6 +209,32 @@ $.fn.dateDropper = function( options ) {
 					'Samedi'
 				];
 				break;
+			//portuguese
+			case 'pt':
+				var monthNames = [
+					"Janeiro",
+					"Fevereiro",
+					"Março",
+					"Abril",
+					"Maio",
+					"Junho",
+					"Julho",
+					"Agosto",
+					"Setembro",
+					"Outubro",
+					"Novembro",
+					"Dezembro"
+				];
+				var dayNames = [
+					"Domingo",
+					"Segunda",
+					"Terça",
+					"Quarta",
+					"Quinta",
+					"Sexta",
+					"Sábado"
+				];
+				break;
 			//english	
 			default:
 				var monthNames = [
