@@ -5,6 +5,7 @@
 	-webkit-box-sizing: initial !important;
 	-moz-box-sizing: initial !important;
 	box-sizing: initial !important;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 /* wrap */
