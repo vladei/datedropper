@@ -654,7 +654,7 @@ $.fn.dateDropper = function( options ) {
 			//day
 			j = d.substr(1), 			// 1-31
 			D = dayNames[x].substr(0,3), 		// Sun, Mon
-			l = dayNames[x], 			// Sunday, Monday
+			l = dayNames[x]; 			// Sunday, Monday
 			
 			//month
 			if(m<10) n = m.substr(1); else n = m; 	// 1-12
