@@ -235,6 +235,32 @@ $.fn.dateDropper = function( options ) {
 					'Samstag'
 				];
 				break;
+			//dutch
+			case 'nl':
+				var monthNames = [
+					"januari",
+					"februari",
+					"maart",
+					"april",
+					"mei",
+					"juni",
+					"juli",
+					"augustus",
+					"september",
+					"oktober",
+					"november",
+					"december"
+				];
+				var dayNames = [
+					'zondag',
+					'maandag',
+					'dinsdag',
+					'woensdag',
+					'donderdag',
+					'vrijdag',
+					'zaterdag'
+				];
+				break;
 			//francais
 			case 'fr':
 				var monthNames = [
