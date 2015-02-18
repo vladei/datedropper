@@ -1,11 +1,11 @@
 
 
 	//////////////////////////////////////
-	// DATEDROPPER Version 1			//
-	// Last Updates: 15/02/2015			//
-	//									//
-	// Made with love by				//
-	// Felice Gattuso					//
+	// DATEDROPPER Version 1	    //
+	// Last Updates: 18/02/2015	    //
+	//				    //
+	// Made with love by		    //
+	// Felice Gattuso		    //
 	//////////////////////////////////////
 	
 
@@ -652,14 +652,14 @@ $.fn.dateDropper = function( options ) {
 			x = x.getDay();
 			
 			//day
-			j = d.substr(1), 					// 1-31
+			j = d.substr(1), 			// 1-31
 			D = dayNames[x].substr(0,3), 		// Sun, Mon
-			l = dayNames[x], 					// Sunday, Monday
+			l = dayNames[x], 			// Sunday, Monday
 			
 			//month
-			n = m.substr(1), 					// 1-12
+			if(m<10) n = m.substr(1); else n = m; 	// 1-12
 			M = monthNames[n-1].substr(0, 3), 	// Jan, Feb
-			F = monthNames[n-1], 				// January, February
+			F = monthNames[n-1], 			// January, February
 
 			str = 
 			settings.format
