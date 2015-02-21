@@ -1,11 +1,11 @@
 
 
 	//////////////////////////////////////
-	// DATEDROPPER Version 1	    //
-	// Last Updates: 18/02/2015	    //
-	//				    //
-	// Made with love by		    //
-	// Felice Gattuso		    //
+	// DATEDROPPER Version 1	    	//
+	// Last Updates: 21/02/2015	    	//
+	//				    				//
+	// Made with love by		    	//
+	// Felice Gattuso		    		//
 	//////////////////////////////////////
 	
 
@@ -81,8 +81,44 @@ $.fn.dateDropper = function( options ) {
 		.attr({
 			'readonly':'readonly'
 		})
-		.addClass('dd_locked')
-		.val(settings.placeholder);
+		.addClass('dd_locked');
+		
+		if(input.val()) {
+	
+			var 
+			txt = input.val(),
+			number_regex = txt.match(/(?:\d{4}|\d{1,2})/g),
+			format_regex = settings.format.match(/[a-zA-Z]+/g),
+			tempY = null,
+			tempD = null,
+			tempM = null;
+			
+			if(number_regex) {
+					
+				for(var i = 0; i<=number_regex.length; i++){
+					if(number_regex[i]){
+						if(number_regex[i].length==4) tempY = number_regex[i];
+						else if(number_regex[i].length<=2&&number_regex[i].length>0){
+							if(number_regex[i]<12&&format_regex[i]=='m'||format_regex[i]=='n') tempM = number_regex[i];
+							else tempD = number_regex[i]
+						}
+					}
+				}
+				
+				if(tempM<10) { if(tempM.length==2) tempM = tempM.substr(1); }
+				if(tempD<10) { if(tempD.length==2) tempD = tempD.substr(1); }
+				
+				if(tempD==null) tempD = current_day;
+				if(tempM==null) tempM = current_month;
+				if(tempY==null) tempY = current_year;
+			
+			}
+		
+		}
+		
+		else {
+			if(settings.placeholder) input.val(settings.placeholder);
+		}
 		
 		dd_inner.append('<div class="dd_sw_ dd_m_"><a class="dd_nav_ dd_prev_"></a><a class="dd_nav_ dd_next_"></a><div class="dd_sl_"></div></div>');
 		
@@ -105,32 +141,6 @@ $.fn.dateDropper = function( options ) {
 		// SWITCH LANGUAGES //
 		
 		switch(settings.lang) {
-			//slovenian
-			case 'si':
-			    var monthNames = [
-			        "januar",
-			        "februar",
-			        "marec",
-			        "april",
-			        "maj",
-			        "junij",
-			        "julij",
-			        "avgust",
-			        "september",
-			        "oktober",
-			        "november",
-			        "december"
-			    ];
-			    var dayNames = [
-			        'nedelja',
-			        'ponedeljek',
-			        'torek',
-			        'sreda',
-			        'četrtek',
-			        'petek',
-			        'sobota'
-			    ];
-				break;
 			//italian
 			case 'it': 
 				var monthNames = [
@@ -206,7 +216,7 @@ $.fn.dateDropper = function( options ) {
 					'Miércoles',
 					'Jueves',
 					'Viernes',
-					'Samedi'
+					'Sábado'
 				];
 				break;
 			//deustche
@@ -313,6 +323,32 @@ $.fn.dateDropper = function( options ) {
 					"Sábado"
 				];
 				break;
+			//slovenian
+			case 'si':
+			    var monthNames = [
+			        "januar",
+			        "februar",
+			        "marec",
+			        "april",
+			        "maj",
+			        "junij",
+			        "julij",
+			        "avgust",
+			        "september",
+			        "oktober",
+			        "november",
+			        "december"
+			    ];
+			    var dayNames = [
+			        'nedelja',
+			        'ponedeljek',
+			        'torek',
+			        'sreda',
+			        'četrtek',
+			        'petek',
+			        'sobota'
+			    ];
+				break;
 			//english	
 			default:
 				var monthNames = [
@@ -401,30 +437,30 @@ $.fn.dateDropper = function( options ) {
 			month.find('li').eq(current_month).addClass('dd_sltd_');
 			year.find('li[value='+current_year+']').addClass('dd_sltd_');
 			if(settings.years_multiple) year_r.find('li[value='+yranger(current_year)+']').addClass('dd_sltd_');
-		
 		},
-		setCurrentDateAnimate 	= function() {
-			month.find('.dd_sl_').animate({scrollLeft:current_month*range},1200,'swing');
+		setValueDate = function(){
+			day.find('li').eq(tempD-1).addClass('dd_sltd_');
+			month.find('li').eq(tempM-1).addClass('dd_sltd_');
+			year.find('li[value='+tempY+']').addClass('dd_sltd_');
+			if(settings.years_multiple) year_r.find('li[value='+yranger(tempY)+']').addClass('dd_sltd_');
+		},
+		setDateAnimate 	= function() {
+			month.find('.dd_sl_').animate({scrollLeft:month.find('li.dd_sltd_').index()*range},1200,'swing');
 			setTimeout(function(){
-				day.find('.dd_sl_').animate({scrollLeft:(current_day-1)*range},1200,'swing');
+				day.find('.dd_sl_').animate({scrollLeft:day.find('li.dd_sltd_').index()*range},1200,'swing');
 				setTimeout(function(){
-					year.find('.dd_sl_').animate({scrollLeft:(year.find('.dd_sl_ li[value='+current_year+']').index())*range},1200,'swing');
+					year.find('.dd_sl_').animate({scrollLeft:year.find('li.dd_sltd_').index()*range},1200,'swing');
 				},200);
 			},400);
 		},
-		setCurrentDate 	= function() {
-			month.find('.dd_sl_').scrollLeft(current_month*range);
-			day.find('.dd_sl_').scrollLeft((current_day-1)*range);
-			year.find('.dd_sl_').scrollLeft((year.find('.dd_sl_ li[value='+current_year+']').index())*range);
-		},
-		setSelectedDate 	= function() {
+		setSelectedDate = function() {
 			month.find('.dd_sl_').scrollLeft(month.find('li.dd_sltd_').index()*range);
 			day.find('.dd_sl_').scrollLeft(day.find('li.dd_sltd_').index()*range);
 			year.find('.dd_sl_').scrollLeft(year.find('li.dd_sltd_').index()*range);
 		}
 		
 		
-		selectCurrent();
+		if(!tempD&&!tempM&&!tempY) selectCurrent(); else setValueDate();
 
 		// SWITCH INTERFACE //
 		
@@ -617,8 +653,9 @@ $.fn.dateDropper = function( options ) {
 			if(input.hasClass('dd_locked')) {
 				
 				input.removeClass('dd_locked');
-				if(settings.animate_current!=false) setCurrentDateAnimate();
-				else setCurrentDate();
+				
+				if(settings.animate_current!=false) setDateAnimate();
+				else setSelectedDate();
 				
 			}
 			
@@ -652,14 +689,14 @@ $.fn.dateDropper = function( options ) {
 			x = x.getDay();
 			
 			//day
-			j = d.substr(1), 			// 1-31
+			j = d.substr(1), 					// 1-31
 			D = dayNames[x].substr(0,3), 		// Sun, Mon
-			l = dayNames[x]; 			// Sunday, Monday
+			l = dayNames[x]; 					// Sunday, Monday
 			
 			//month
 			if(m<10) n = m.substr(1); else n = m; 	// 1-12
-			M = monthNames[n-1].substr(0, 3), 	// Jan, Feb
-			F = monthNames[n-1], 			// January, February
+			M = monthNames[n-1].substr(0, 3), 		// Jan, Feb
+			F = monthNames[n-1], 					// January, February
 
 			str = 
 			settings.format
