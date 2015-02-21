@@ -99,7 +99,7 @@ $.fn.dateDropper = function( options ) {
 					if(number_regex[i]){
 						if(number_regex[i].length==4) tempY = number_regex[i];
 						else if(number_regex[i].length<=2&&number_regex[i].length>0){
-							if(number_regex[i]<12&&format_regex[i]=='m'||format_regex[i]=='n') tempM = number_regex[i];
+							if(number_regex[i]<=12&&format_regex[i]=='m'||format_regex[i]=='n') tempM = number_regex[i];
 							else tempD = number_regex[i]
 						}
 					}
@@ -113,6 +113,7 @@ $.fn.dateDropper = function( options ) {
 				if(tempY==null) tempY = current_year;
 			
 			}
+			if(tempY<settings.minYear) settings.minYear = tempY;
 		
 		}
 		
