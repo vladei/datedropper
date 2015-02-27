@@ -524,7 +524,6 @@
 				calc();
 			});
 			dd_y.find('li').click(function(){
-				if(dd_a_y.find('li').length){
 					dd_a_y.find('ul').empty();
 					var
 					dd = dd_y_r.find('li.dd_sltd_').attr('value'),
@@ -546,7 +545,6 @@
 						dd_a_y.removeClass('dd_open_');
 						calc();
 					})
-				}
 			});
 		
 		}
