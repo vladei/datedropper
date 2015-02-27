@@ -2,18 +2,20 @@
 
 	//////////////////////////////////////
 	// DATEDROPPER Version 1.2	    	//
-	// Last Updates: 26/02/2015	    	//
+	// Last Updates: 27/02/2015	    	//
 	//				    				//
 	// Made with love by		    	//
 	// Felice Gattuso		    		//
 	//////////////////////////////////////
 	
 
-$.fn.dateDropper = function( options ) { 
-
-	// IF IS INPUT AND TYPE IS TEXT //
-	
-	if( this.is('input') && this.attr('type') == "text" ) {
+(function ( $ ) {
+	$.fn.dateDropper = function( options ) {
+		return $(this).each(function() {
+			
+		// IF IS INPUT AND TYPE IS TEXT //
+		
+		if( $(this).is('input') && $(this).attr('type') == "text" ) {
 		
 		// DECLARE CURRENT VARIABLE //
 		
@@ -48,7 +50,7 @@ $.fn.dateDropper = function( options ) {
 		
 		// DECLARE VARIABLE //
 
-		dd_input			= this,
+		dd_input		= $(this),
 		drop_length 	= $('.dd_wrap').length + 1,
 		bissextile		= function(yr) {return !((yr % 4) || (!(yr % 100) && (yr % 400)));}, //bissextile year
 		range 			= 100, 
@@ -522,27 +524,29 @@ $.fn.dateDropper = function( options ) {
 				calc();
 			});
 			dd_y.find('li').click(function(){
-				dd_a_y.find('ul').empty();
-				var
-				dd = dd_y_r.find('li.dd_sltd_').attr('value'),
-				dd2 = dd_y.find('li.dd_sltd_').attr('value'),
-				dd10 = parseInt(dd) + 9;
-				if(dd10>settings.maxYear) dd10=settings.maxYear;
-				dd_a_y.find('li').removeClass('dd_sltd_');
-				
-				for ( var yr = dd; yr <= dd10 ; yr++ ) {
-					dd_a_y.find('ul').append('<li value="'+yr+'">'+yr+'</li>')
-				}
-				dd_a_y.find('li[value='+dd2+']').addClass('dd_sltd_');
-				dd_a_y.addClass('dd_open_');
-				
-				dd_a_y.find('li').click(function(){
+				if(dd_a_y.find('li').length){
+					dd_a_y.find('ul').empty();
 					var
-					dd = $(this).attr('value');
-					dd_y.find('li[value='+dd+']').click();
-					dd_a_y.removeClass('dd_open_');
-					calc();
-				})
+					dd = dd_y_r.find('li.dd_sltd_').attr('value'),
+					dd2 = dd_y.find('li.dd_sltd_').attr('value'),
+					dd10 = parseInt(dd) + 9;
+					if(dd10>settings.maxYear) dd10=settings.maxYear;
+					dd_a_y.find('li').removeClass('dd_sltd_');
+					
+					for ( var yr = dd; yr <= dd10 ; yr++ ) {
+						dd_a_y.find('ul').append('<li value="'+yr+'">'+yr+'</li>')
+					}
+					dd_a_y.find('li[value='+dd2+']').addClass('dd_sltd_');
+					dd_a_y.addClass('dd_open_');
+					
+					dd_a_y.find('li').click(function(){
+						var
+						dd = $(this).attr('value');
+						dd_y.find('li[value='+dd+']').click();
+						dd_a_y.removeClass('dd_open_');
+						calc();
+					})
+				}
 			});
 		
 		}
@@ -814,8 +818,8 @@ $.fn.dateDropper = function( options ) {
 			
 			else dropperSubmit(str);
 			
+				});
+			}
 		});
-	
-	}
-    
-};
+	};
+}( jQuery ));
