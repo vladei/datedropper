@@ -155,6 +155,32 @@
 					'Sábado'
 				];
 				break;
+			//dansk
+			case 'da':
+				var monthNames = [
+					"januar",
+					"februar",
+					"marts",
+					"april",
+					"maj",
+					"juni",
+					"juli",
+					"august",
+					"september",
+					"oktober",
+					"november",
+					"december"
+				];
+				var dayNames = [
+					'søndag',
+					'mandag',
+					'tirsdag',
+					'onsdag',
+					'torsdag',
+					'fredag',
+					'lørdag'
+				];
+				break;
 			//deustche
 			case 'de':
 				var monthNames = [
