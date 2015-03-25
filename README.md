@@ -4,7 +4,7 @@ datedropper is a jQuery plugin that provides a quick and easy way to manage date
 
 [Usage and Examples](http://bit.ly/17ab6dt)
 
-# Supported Languages
+### Supported Languages
 
 LANGUAGE  | OPTION
 --------- | ---------
