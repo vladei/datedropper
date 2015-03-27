@@ -2,7 +2,7 @@
 
 	//////////////////////////////////////
 	// DATEDROPPER Version 1.2	    	//
-	// Last Updates: 27/02/2015	    	//
+	// Last Updates: 27/03/2015	    	//
 	//				    				//
 	// Made with love by		    	//
 	// Felice Gattuso		    		//
@@ -77,6 +77,32 @@
 		// SWITCH LANGUAGES //
 		
 		switch(settings.lang) {
+			//Arabic
+			case 'ar':
+				var monthNames = [
+					"جانفي",
+					"فيفري",
+					"مارس",
+					"أفريل",
+					"ماي",
+					"جوان",
+					"جويلية",
+					"أوت",
+					"سبتمبر",
+					"أكتوبر",
+					"نوفمبر",
+					"ديسمبر"
+				]; 
+				var dayNames = [
+					'الأحد',
+					'الإثنين',
+					'الثلثاء',
+					'الأربعاء',
+					'الخميس',
+					'الجمعة',
+					'السبت'
+				];
+				break;
 			//italian
 			case 'it': 
 				var monthNames = [
