@@ -8,17 +8,17 @@ datedropper is a jQuery plugin that provides a quick and easy way to manage date
 
 LANGUAGE  | OPTION
 --------- | ---------
-Italian   | { lang: 'it' }
-Hungarian | { lang: 'hu' }
-Greek	  | { lang: 'gr' }
-Español	  | { lang: 'es' }
+Arabic    | { lang: 'ar' }
 Dansk	  | { lang: 'da' }
 Deustche  | { lang: 'de' }
 Dutch     | { lang: 'nl' }
+Español	  | { lang: 'es' }
+English	  | (Default)
 Français  | { lang: 'fr' }
+Greek	  | { lang: 'gr' }
+Hungarian | { lang: 'hu' }
+Italian   | { lang: 'it' }
 Portuguese | { lang: 'pt' }
+Russian    | { lang: 'ru' }
 Slovenian  | { lang: 'si' }
 Ukrainian  | { lang: 'uk' }
-Russian    | { lang: 'ru' }
-English	   | (Default)
-
