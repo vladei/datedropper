@@ -18,6 +18,7 @@ Français  | { lang: 'fr' }
 Greek	  | { lang: 'gr' }
 Hungarian | { lang: 'hu' }
 Italian   | { lang: 'it' }
+Polish    | { lang: 'pl' }
 Portuguese | { lang: 'pt' }
 Russian    | { lang: 'ru' }
 Slovenian  | { lang: 'si' }
