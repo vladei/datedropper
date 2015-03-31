@@ -311,6 +311,32 @@
 					'Samedi'
 				];
 				break;
+			//polski
+			case 'pl':
+				var monthNames = [
+					"styczeń",
+					"luty",
+					"marzec",
+					"kwiecień",
+					"maj",
+					"czerwiec",
+					"lipiec",
+					"sierpień",
+					"wrzesień",
+					"październik",
+					"listopad",
+					"grudzień"
+				];
+				var dayNames = [
+					'niedziela',
+					'poniedziałek',
+					'wtorek',
+					'środa',
+					'czwartek',
+					'piątek',
+					'sobota'
+				];
+				break;
 			//portuguese
 			case 'pt':
 				var monthNames = [
