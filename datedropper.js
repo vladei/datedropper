@@ -441,6 +441,32 @@
 					'суббота'
 				];
 				break;
+			//turkish
+			case 'tr':
+				var monthNames = [
+					"Ocak",
+					"Şubat",
+					"Mart",
+					"Nisan",
+					"Mayıs",
+					"Haziran",
+					"Temmuz",
+					"Ağustos",
+					"Eylül",
+					"Ekim",
+					"Kasım",
+					"Aralık"
+				];
+				var dayNames = [
+					'Pazar',
+					'Pazartesi',
+					'Sali',
+					'Çarşamba',
+					'Perşembe',
+					'Cuma',
+					'Cumartesi'
+				];
+				break;
 			//english	
 			default:
 				var monthNames = [

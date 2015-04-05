@@ -23,3 +23,4 @@ Portuguese | { lang: 'pt' }
 Russian    | { lang: 'ru' }
 Slovenian  | { lang: 'si' }
 Ukrainian  | { lang: 'uk' }
+Turkish  | { lang: 'tr' }
