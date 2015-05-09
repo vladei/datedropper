@@ -233,12 +233,12 @@
 					'lørdag'
 				];
 				break;
-			//deustche
+			//deutsch
 			case 'de':
 				var monthNames = [
 					"Januar",
 					"Februar",
-					"Marz",
+					"März",
 					"April",
 					"Mai",
 					"Juni",
