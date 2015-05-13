@@ -911,9 +911,9 @@
 		
 		calc();
 		
-		// INPUT CLICK TO ACTIVE DATEDROPPER //
+		// INPUT CLICK OR FOCUS TO ACTIVE DATEDROPPER //
 		
-		dd_input.click(function(){
+		dd_input.on('click focus', function(){
 			
 			dd_id.show();
 			dd_inner.css({
