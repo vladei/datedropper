@@ -9,13 +9,13 @@ datedropper is a jQuery plugin that provides a quick and easy way to manage date
 LANGUAGE  | OPTION
 --------- | ---------
 Arabic    | { lang: 'ar' }
-Dansk	  | { lang: 'da' }
-Deustche  | { lang: 'de' }
+Dansk	    | { lang: 'da' }
+Deutsch   | { lang: 'de' }
 Dutch     | { lang: 'nl' }
 Español	  | { lang: 'es' }
 English	  | (Default)
 Français  | { lang: 'fr' }
-Greek	  | { lang: 'gr' }
+Greek	    | { lang: 'gr' }
 Hungarian | { lang: 'hu' }
 Italian   | { lang: 'it' }
 Polish    | { lang: 'pl' }
@@ -23,4 +23,4 @@ Portuguese | { lang: 'pt' }
 Russian    | { lang: 'ru' }
 Slovenian  | { lang: 'si' }
 Ukrainian  | { lang: 'uk' }
-Turkish  | { lang: 'tr' }
+Turkish   | { lang: 'tr' }
