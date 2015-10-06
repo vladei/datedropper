@@ -999,13 +999,13 @@
 			str = 
 			settings.format
 			.replace(/\b(Y)\b/i,Y)
-			.replace(/\b(m)\b/i,m)
+			.replace(/\b(m)\b/,m)
 			.replace(/\b(d)\b/i,d)
 			.replace(/\b(D)\b/i,D)
 			.replace(/\b(j)\b/i,j)
 			.replace(/\b(l)\b/i,l)
 			.replace(/\b(F)\b/i,F)
-			.replace(/\b(M)\b/i,M)
+			.replace(/\b(M)\b/,M)
 			.replace(/\b(n)\b/i,n);
 
 			if(settings.lock) {
