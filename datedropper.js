@@ -493,6 +493,32 @@
 					'토요일'
 				];
 				break;
+			//finnish
+			case 'fi':
+				var monthNames = [
+					"Tammikuu",
+					"Helmikuu",
+					"Maaliskuu",
+					"Huhtikuu",
+					"Toukokuu",
+					"Kesäkuu",
+					"Heinäkuu",
+					"Elokuu",
+					"Syyskuu",
+					"Lokakuu",
+					"Marraskuu",
+					"Joulukuu"
+				];
+				var dayNames = [
+					'Sunnuntai',
+					'Maanantai',
+					'Tiistai',
+					'Keskiviikko',
+					'Torstai',
+					'Perjantai',
+					'Lauantai'
+				];
+				break;
 			//english	
 			default:
 				var monthNames = [
