@@ -14,6 +14,7 @@ Deutsch   | { lang: 'de' }
 Dutch     | { lang: 'nl' }
 Español	  | { lang: 'es' }
 English	  | (Default)
+Finnish   | { lang: 'fi' }
 Français  | { lang: 'fr' }
 Greek	    | { lang: 'gr' }
 Hungarian | { lang: 'hu' }
