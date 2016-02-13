@@ -876,6 +876,7 @@
 			dd_input.val(str).change();
 			dd_inner.addClass('dd_fadeout').removeClass('dd_'+settings.animation);
 			setTimeout(function(){dd_inner.hide().removeClass('dd_fadeout'); dd_id.hide();},300);
+			if (settings.onSubmit ) settings.onSubmit(str);
 		},
 		dropperAlert = function() {
 			dd_inner.addClass('dd_alert').removeClass('dd_'+settings.animation);
